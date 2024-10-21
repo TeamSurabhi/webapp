@@ -126,17 +126,17 @@
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                     <div class="h-100 bg-secondary p-5">
-                        <form>
+                        <form action="http://127.0.0.1:3333/api/v1/donate" method="POST">
                             <div class="row g-3">
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control bg-light border-0" id="name" placeholder="Your Name">
+                                        <input type="text" class="form-control bg-light border-0" id="name" name="name" placeholder="Your Name">
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control bg-light border-0" id="email" placeholder="Your Email">
+                                        <input type="email" class="form-control bg-light border-0" id="email" name="email" placeholder="Your Email">
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
@@ -152,7 +152,7 @@
                                         <label class="btn btn-light py-4" for="btnradio3" onclick="setAmount(1000)">&#8377;1000</label>
                                     </div>
                                 </div>
-                                <input type="number" id="custom-amount" class="custom-amount" placeholder="Custom Amount">
+                                <input type="number" id="amount" name="amount" class="custom-amount" placeholder="Custom Amount">
                                 <div class="col-12">
                                     <button class="btn btn-primary px-5" id="rzp-button1" onclick="proceedToPayment()" style="height: 60px;">
                                         Donate Now
