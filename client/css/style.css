@@ -119,6 +119,31 @@ body {
     color: var(--primary);
 }
 
+.col-lg-3 .fa-facebook-f {
+    color: #0d6efd !important;
+}
+
+.col-lg-3 .fa-twitter{
+    color: #000000 !important;
+    border: #000000;
+}
+
+.col-lg-3 .fa-linkedin-in{
+    color: #0d6efd !important;
+}
+
+.col-lg-3 .fa-instagram{
+    color: #c7165a !important;
+}
+
+.col-lg-3 .fa-youtube{
+    color: #ff0000 !important;
+}
+
+.col-lg-3 .fa-whatsapp{
+    color: #00ff15 !important;
+}
+
 .col-lg-6 .fa-facebook-f{
     color: #0d6efd !important;
 }
