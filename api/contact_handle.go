@@ -35,3 +35,22 @@ func (s *ContactHandler) HandleContact(c *fiber.Ctx) error {
 		"message": "Message received successfully",
 	})
 }
+
+func (s *ContactHandler) HandleNewsletter(c *fiber.Ctx) error {
+	var subscription types.NewsletterSubscription
+
+	if err := c.BodyParser(&subscription); err != nil {
+		return c.Status(400).JSON(fiber.Map{
+			"message": "Invalid request",
+		})
+	}
+
+	if err := s.store.InsertNewsletterSubscription(c.Context(), subscription); err != nil {
+		return c.Status(500).JSON(fiber.Map{
+			"message": err.Error(),
+		})
+	}
+	return c.JSON(fiber.Map{
+		"message": "Subscribed to newsletter",
+	})
+}

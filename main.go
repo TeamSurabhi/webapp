@@ -29,5 +29,6 @@ func main() {
 
 	apiv1.Post("/donate", api.HandleDonate)
 	apiv1.Post("/contact", contactHandler.HandleContact)
+	apiv1.Post("/newsletter", contactHandler.HandleNewsletter)
 	app.Listen(":3333")
 }
