@@ -214,7 +214,25 @@ function proceedToPayment() {
     rzp1.open();
 }
 
+// Contact application Popup 
+    document.getElementById('job-application-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
 
+    // Show the popup message
+    document.getElementById('contact-popup').style.display = 'flex';
+});
+
+// Close popup functionality
+document.querySelector('.application-popup-btn').addEventListener('click', function() {
+    document.getElementById('contact-popup').style.display = 'none';
+});
+
+// Close popup when clicking outside of the popup content
+window.onclick = function(event) {
+    if (event.target === document.getElementById('contact-popup')) {
+        document.getElementById('contact-popup').style.display = 'none';
+    }
+}
 
 
 

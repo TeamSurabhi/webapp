@@ -121,34 +121,34 @@
                     <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Contact Us</div>
                     <h1 class="display-6 mb-5">If You Have Any Query, Please Contact Us</h1>
                     <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum vero praesentium officiis magnam consequatur corporis impedit sequi necessitatibus unde!.</p>
-                    <form>
+                    <form id="job-application-form">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
                                     <label for="name">Your Name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email" required>
                                     <label for="email">Your Email</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                    <input type="text" class="form-control" id="subject" placeholder="Subject" required>
                                     <label for="subject">Subject</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
+                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px" required></textarea>
                                     <label for="message">Message</label>
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary py-2 px-3 me-3">
+                                <button class="btn btn-primary py-2 px-3 me-3" type="submit">
                                     Send Message
                                     <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
                                         <i class="fa fa-arrow-right"></i>
@@ -168,6 +168,15 @@
         </div>
     </div>
     <!-- Contact End -->
+
+    <!-- Submit Application Popup Start -->
+    <div id="contact-popup" class="contact-popup">
+        <div class="contact-popup-submission">
+            <span class="application-popup-btn">&times;</span>
+            <p>Application has been submitted. Please wait for 2-4 weeks. We will contact you over phone and email.</p>
+        </div>
+    </div>
+    <!-- Submit Application Popup End -->
 
 
     <!-- Footer Start -->
