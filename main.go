@@ -1,35 +1,33 @@
 package main
 
-import "github.com/gofiber/fiber/v2"
+import (
+	"context"
+	"log"
 
-type donateInfo struct {
-	Name   string  `json:"name"`
-	Email  string  `json:"email"`
-	Amount float64 `json:"amount"`
-}
+	"github.com/gofiber/fiber/v2"
+	"github.com/unsuman/webapp/api"
+	"github.com/unsuman/webapp/db"
+	"go.mongodb.org/mongo-driver/mongo"
+	"go.mongodb.org/mongo-driver/mongo/options"
+)
 
 func main() {
+	ctx := context.Background()
 	app := fiber.New()
+
+	client, err := mongo.Connect(ctx, options.Client().ApplyURI("mongodb://localhost:27017"))
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	contactStore := db.NewMongoContactStore(client, "Project-Surabhi")
+	contactHandler := api.NewContactHandler(contactStore)
 
 	app.Static("/", "./client")
 
 	apiv1 := app.Group("/api/v1")
 
-	apiv1.Post("/donate", func(c *fiber.Ctx) error {
-		var donateInfo donateInfo
-
-		if err := c.BodyParser(&donateInfo); err != nil {
-			return c.Status(400).JSON(fiber.Map{
-				"message": "Invalid request",
-			})
-		}
-
-		return c.JSON(fiber.Map{
-			"message": "Donation successful",
-			"name":    donateInfo.Name,
-			"email":   donateInfo.Email,
-			"amount":  donateInfo.Amount,
-		})
-	})
+	apiv1.Post("/donate", api.HandleDonate)
+	apiv1.Post("/contact", contactHandler.HandleContact)
 	app.Listen(":3333")
 }
