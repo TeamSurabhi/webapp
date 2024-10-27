@@ -121,29 +121,49 @@
                     <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Contact Us</div>
                     <h1 class="display-6 mb-5">If You Have Any Query, Please Contact Us</h1>
                     <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum vero praesentium officiis magnam consequatur corporis impedit sequi necessitatibus unde!.</p>
+
+                    <form id="job-application-form">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+
                     <form action="/api/v1/contact" method="POST">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+
                                     <label for="name">Your Name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
+
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+
                                     <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+
                                     <label for="email">Your Email</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
+
+                                    <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+
                                     <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+
                                     <label for="subject">Subject</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
+
+                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px" required></textarea>
+
                                     <textarea class="form-control" placeholder="Leave a message here" id="message" name="message" style="height: 100px" required></textarea>
+
                                     <label for="message">Message</label>
                                 </div>
                             </div>
