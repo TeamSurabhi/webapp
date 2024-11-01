@@ -479,6 +479,11 @@ body {
     background: var(--primary);
 }
 
+.col-lg-6 .display-6 {
+    display: flex;
+    justify-content: center !important;
+}
+
 
 /*** Testimonial ***/
 .testimonial-carousel::before {
