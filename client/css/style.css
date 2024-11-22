@@ -718,6 +718,11 @@ input[type="submit"]:hover {
     header h1 {
         font-size: 1.8rem;
     }
+
+    .back-to-top {
+        bottom: 5.3rem;
+        right: 15px;
+    }
 }
 
 
