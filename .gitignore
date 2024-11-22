@@ -2,5 +2,17 @@ bin
 .vscode
 include.md
 
+# Ignore node_modules folder
+node_modules/
 
-# Frontend
+# Ignore log files
+*.log
+.log
+
+# Ignore environment variables
+.env
+.vscode
+.env.local
+
+# NPM or Yarn related files
+package-lock.json
